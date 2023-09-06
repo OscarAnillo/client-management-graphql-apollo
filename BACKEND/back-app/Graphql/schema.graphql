@@ -1,0 +1,30 @@
+type Client {
+    id: ID!
+    name: String!
+    email: String!
+    phone: String!
+}
+
+type Project {
+    id: ID!
+    name: String!
+    description: String!
+    status: String!
+    client: Client
+}
+
+type Query {
+    clients: [Client!]!
+    findClient(id: ID!): Client
+    client: [Client!]!
+    projects: [Project]
+    findProject(id: ID!): Project
+}
+
+type Mutation {
+    addClient(name: String! email: String! phone: String!): Client
+    deleteClient(id: ID!): Client
+    addProject(name: String! description: String! status: String! clientId: String!): Project
+    deleteProject(id: ID!): Project
+    updateProject(id: ID! name: String description: String status: String): Project
+}
