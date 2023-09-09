@@ -9,7 +9,7 @@ type Project {
     id: ID!
     name: String!
     description: String!
-    status: String!
+    status: String
     client: Client
 }
 
@@ -24,7 +24,7 @@ type Query {
 type Mutation {
     addClient(name: String! email: String! phone: String!): Client
     deleteClient(id: ID!): Client
-    addProject(name: String! description: String! status: String! clientId: String!): Project
+    addProject(name: String! description: String! status: String clientId: ID!): Project
     deleteProject(id: ID!): Project
     updateProject(id: ID! name: String description: String status: String): Project
 }

@@ -1,5 +1,6 @@
 import { ApolloServer } from '@apollo/server'
 import { startStandaloneServer } from '@apollo/server/standalone'
+import { GraphQLError } from 'graphql';
 import conn from './Config/db.js';
 import dotenv from 'dotenv'
 dotenv.config();
@@ -9,7 +10,7 @@ import path from 'path'
 import Client from './Model/clientModel.js';
 import Project from './Model/projectModel.js'
 
-conn();
+conn(); 
 
 const resolvers = {
     Query: {
@@ -41,7 +42,18 @@ const resolvers = {
         },
         addProject: async (root, args) => {
             const newProject = new Project({ ...args });
-            await newProject.save()
+
+            try {
+                await newProject.save()
+            } catch (err) {
+                throw new GraphQLError("Creating a new project failed", {
+                    extensions: {
+                        code: "BAD_USER_INPUT",
+                        invalidArgs: args.name,
+                        err
+                    }
+                })
+            }
             return newProject
         },
         deleteProject: async (root, args) => {
