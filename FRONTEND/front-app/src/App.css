@@ -1,7 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
+  text-decoration: none;
+  list-style: none;
 }
 .app {
+  font-family: 'Montserrat', sans-serif;
+  text-align: left;
+}
+.container {
+  margin: 0 auto;
+  width: 70%;
+  padding: 1em 0;
+}
+
+.header-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-div img {
+  width: 100px;
+}
+.home-row {
+  display: flex;
+  align-items: center;
+}
+
+.add-client-div {
+  margin-top: 2em;
+}
+.modal-div {
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20%;
+  padding: 1em;
+}
+.modal-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.test {
+  width: 95%;
+}
+.text-field {
+  margin-top: 1em;
+  width: 100%;
+}
+
+
+/* Clients */
+.table {
+  width: 100%;
+  margin-top: 3em;
+  border-collapse: collapse;
+}
+.table-head {
+  background-color: #1976d2;
+}
+td, th {
+  border: 1px solid #dddddd;
   text-align: center;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #eaf3f7;
+}
+
+/* AddProjectModal */
+.butonMuiButtonBase-root  {
+  margin-left: 1em;
+}
+
+/* Projects */
+.projects-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* ProjectCard */
+.MuiCard-root {
+  margin: 1.5em .5em .5em 0;
+  padding: 1em .5em;
+}
+.MuiCard-root div:nth-child(1) {
+  padding-right: .3em;
+}
+.project-card-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Project */
+.project-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ClientInformation */
+.client-info-div {
+  margin-top: 4em;
+}
+.client-info-ul li{
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: .5em;
+}
+.icon {
+  margin-right: .5em;
+
+}
+
+/* UpdateClientInfo */
+.update-client-div {
+  margin-top: 3em;
+}
+.update-form {
+  border: 1px solid red;
+}
+.MuiInputBase-root {
+  width: 100%;
+}
+.update-textarea {
+  resize: none;
+  width: 100%;
+}
+.submit-btn {
+  width: 20%;
+}
+.btn-delete {
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
 }
